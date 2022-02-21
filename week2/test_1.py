@@ -1,14 +1,37 @@
-n, x = map(int, input().split())
+import sys
 
-num = list(map(int, input().split()))
-array = list()
+n = int(sys.stdin.readline().rstrip())
+queue = []
+for _ in range(n):
+  method = sys.stdin.readline().split()
 
-for i in range(n):
-    if num[i] < x:
-        array.append(num[i])
+  if method[0] == 'push':
+    queue.append(method[1])
 
-array = list(set(array))
-# array.sort()
+  elif method[0] == 'pop':
+    if len(queue) != 0:
+      print(queue[0])
+      del queue[0]
+    else:
+      print(-1)
 
-for array in array:
-    print(array)
+  elif method[0] == 'size':
+    print(len(queue))
+  
+  elif method[0] == 'empty':
+    if len(queue) == 0:
+      print(1)
+    else:
+      print(0)
+
+  elif method[0] == 'front':
+    if queue:
+      print(queue[0])
+    else:
+      print(-1)
+
+  elif method[0] == 'back':
+    if queue:
+      print(queue[-1])
+    else:
+      print(-1)

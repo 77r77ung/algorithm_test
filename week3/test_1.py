@@ -1,37 +1,23 @@
 import sys
 
-n = int(sys.stdin.readline().rstrip())
-queue = []
-for _ in range(n):
-  method = sys.stdin.readline().split()
+s = []
+s_top = 0
+n = int(sys.stdin.readline())
 
-  if method[0] == 'push':
-    queue.append(method[1])
+# 리스트를 스택으로 구현
+top = n
+a = list(map(int, sys.stdin.readline().split()))
 
-  elif method[0] == 'pop':
-    if len(queue) != 0:
-      print(queue[0])
-      del queue[0]
+for i in range(n-1):
+    top -= 1
+    outNum = a.pop()
+
+    if a[i] < outNum:
+        s_top += 1
+        s.append(outNum)
+    elif a[i] >= outNum:
+        top -= 1
     else:
-      print(-1)
+        print(-1)
 
-  elif method[0] == 'size':
-    print(len(queue))
-  
-  elif method[0] == 'empty':
-    if len(queue) == 0:
-      print(1)
-    else:
-      print(0)
-
-  elif method[0] == 'front':
-    if queue:
-      print(queue[0])
-    else:
-      print(-1)
-
-  elif method[0] == 'back':
-    if queue:
-      print(queue[-1])
-    else:
-      print(-1)
+print()
