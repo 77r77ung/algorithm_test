@@ -3,6 +3,8 @@
 문제 3. 산술평균, 중앙값, 최빈값, 범위 구하기 (중심경향치)
 
 Collections 모듈 - Counter 클래스
+
+TODO) 중앙값
 '''
 
 import sys

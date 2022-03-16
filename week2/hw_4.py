@@ -1,13 +1,22 @@
+'''
+[Ubse Algorithm_test] Homework / week2
+문제 4. 스택 카드 문제
+'''
 import sys
+N = int(sys.stdin.readline())
 
-n = int(sys.stdin.readline())
-card = [i for i in range(1, n + 1)]
-res = []
+stack = []
+result = []
+for _ in range(1, N+1):
+    stack.append(_)
 
-while True:
-    res.append(card.pop(0)) 
-    if not card: 
-        break
-    card.append(card.pop(0)) 
+print(stack)
 
-print(*res)
+for i in range(N+1):
+    if i == 0 or i%2 == 1:
+        stack.pop()
+    else:
+        stack.pop()
+        stack.append(i)
+        
+print(stack)

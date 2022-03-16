@@ -1,15 +1,22 @@
+'''
+[Ubse Algorithm_test] Homework / week2
+문제 2. 스택 (백준 스택: 10773번 문제)
+'''
+
 import sys
-N = int(sys.stdin.readline())
-result = 0
-stacks = []
-for i in range(N):
-    num = int(input())
-    if num > 0:
-        stacks.append(num)
+k = int(sys.stdin.readline())
+
+stack = []
+for _ in range(k):
+    temp = int(sys.stdin.readline())
+    
+    if temp == 0:
+        stack.pop()
     else:
-        stacks.pop()
+        stack.append(temp)
 
-for _ in stacks:
-    result += _
+hap = 0
+for i in stack:
+    hap += i
 
-print(result)
+print(hap)
