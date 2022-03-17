@@ -1,6 +1,8 @@
 '''
 [Ubse Algorithm_test] Homework / week2
 문제 4. 스택 카드 문제
+
+TODO 제일 위에 있는 카드를 제일 아래에 있는 카드 밑으로 올리기
 '''
 import sys
 N = int(sys.stdin.readline())
