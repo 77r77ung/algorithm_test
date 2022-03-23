@@ -1,32 +1,46 @@
+'''
+[Ubse Algorithm_test] Homework / week2
+문제 5. 덱 구현
+덱: 양쪽 끝에서 삽입과 삭제가 모두 가능한 자료구조의 한 형태
+'''
 import sys
-input = sys.stdin.readline
-deque = [0] * 10000
-f,r = 0,0
-for i in range(int(input())):
-    a = input().split()
-    if a[0] == "push_front":
-        deque[f] = a[1]
-        f+=1
-    elif a[0] == "push_back":
-        r -= 1
-        deque[r] = a[1]
-    elif a[0] == "pop_front":
-        if f-r:
-            f -= 1
-            print(deque[f])
+N = int(sys.stdin.readline())
+
+deque = []
+l = 0
+for i in range(N):
+    commend = sys.stdin.readline().split()
+
+    if commend[0] == 'push_front':
+        deque.insert(0, commend[1])
+    elif commend[0] == 'push_back':
+        deque.append(commend[1])
+    elif commend[0] == 'pop_front':
+        if len(deque) != 0:
+            print(deque[0])
+            del(deque[0])
         else:
             print(-1)
-    elif a[0] == "pop_back":
-        if f-r:
-            print(deque[r])
-            r += 1
+    elif commend[0] == 'pop_back':
+        if len(deque) != 0:
+            deque.pop()
+            print(deque.pop())
         else:
             print(-1)
-    elif a[0] == "size":
-        print(f-r)
-    elif a[0] == "empty":
-        print(1 if f-r == 0 else 0)
-    elif a[0] == "front":
-        print(deque[f-1] if f-r else -1)
-    elif a[0] == "back":
-        print(deque[r] if f-r else -1)
+    elif commend[0] == 'size':
+        print(len(deque))
+    elif commend[0] == 'empty':
+        if len(deque) == 0:
+            print(0)
+        else:
+            print(1)
+    elif commend[0] == 'fornt':
+        if len(deque) != 0:
+            print(deque[0])
+        else:
+            print(-1)
+    elif commend[0] == 'back':
+        if len(deque) != 0:
+            print(deque[-1])
+        else:
+            print(-1)
