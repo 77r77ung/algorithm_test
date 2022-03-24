@@ -7,7 +7,6 @@ import sys
 N = int(sys.stdin.readline())
 
 deque = []
-l = 0
 for i in range(N):
     commend = sys.stdin.readline().split()
 
