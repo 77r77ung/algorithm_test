@@ -2,6 +2,8 @@
 [Ubse Algorithm_test] Homework / week2
 문제 5. 덱 구현
 덱: 양쪽 끝에서 삽입과 삭제가 모두 가능한 자료구조의 한 형태
+
+TODO front 출력 안 됨 해결!
 '''
 import sys
 N = int(sys.stdin.readline())

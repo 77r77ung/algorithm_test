@@ -4,7 +4,6 @@
 
 큐: 선입선출, FIFO(First In First Out)
 '''
-from secrets import randbelow
 import sys
 N = int(sys.stdin.readline())
 
